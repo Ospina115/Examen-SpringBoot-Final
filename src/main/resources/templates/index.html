@@ -1,52 +1,84 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
+    <link rel="stylesheet" href="../static/css/login.css">
 </head>
 <body>
-    <h1>Iniciar Sesión</h1>
-    <form id="loginForm">
-        <label for="username">Usuario:</label>
-        <input type="text" id="username" name="username" required>
-        <br>
-        <label for="password">Contraseña:</label>
-        <input type="password" id="password" name="password" required>
-        <br>
-        <button type="submit">Iniciar Sesión</button>
-    </form>
+    <div class="login-container">
+        <div class="login-box">
+            <!-- Título del formulario -->
+            <h1>Iniciar Sesión</h1>
+            <form id="loginForm">
+                <label for="username">Usuario:</label>
+                <input type="text" id="username" placeholder="Ingresa tu usuario" required>
+
+                <label for="password">Contraseña:</label>
+                <input type="password" id="password" placeholder="Ingresa tu contraseña" required>
+
+                <!-- Botón de enviar -->
+                <button class="ingreso" type="submit">Entrar</button>
+                <button class="crear"><a href="..//static/html/registro.html">Ingreso</a></button>
+
+                <!-- Mensaje de error -->
+                <p class="error-message" id="errorMessage">Credenciales incorrectas</p>
+            </form>
+        </div>
+    </div>
 
     <script>
-        document.getElementById('loginForm').addEventListener('submit', async function(event) {
-            event.preventDefault(); // Evitar el envío del formulario por defecto
+document.getElementById('loginForm').addEventListener('submit', function(e) {
+    e.preventDefault();
 
-            const username = document.getElementById('username').value;
-            const password = document.getElementById('password').value;
+    const username = document.getElementById('username').value;
+    const password = document.getElementById('password').value;
 
-            try {
-                const response = await fetch('http://localhost:8080/auth/authenticate', { // URL corregida
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify({ username, password }),
-                });
+    const loginData = {
+        username: username,
+        password: password
+    };
 
-                if (!response.ok) {
-                    throw new Error('Error en la autenticación');
-                }
-
-                const data = await response.json();
-                console.log('Inicio de sesión exitoso:', data);
-
-                // Almacenar el token en localStorage si se recibe
-                localStorage.setItem('token', data.token);
-
-            } catch (error) {
-                console.error('Error:', error);
+    // Enviar la solicitud POST
+    fetch('http://localhost:8080/api/v1/auth/authenticate', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(loginData)
+    })
+    .then(response => {
+        if (!response.ok) {
+            if (response.status === 401) {
+                throw new Error('Credenciales incorrectas. Verifique su usuario y contraseña.');
+            } else if (response.status === 500) {
+                throw new Error('Error en el servidor. Inténtelo más tarde.');
+            } else {
+                throw new Error('Error desconocido. Inténtelo más tarde.');
             }
-        });
+        }
+        return response.json();
+    })
+    .then(data => {
+        const token = data.jwt;  // Cambiado a "jwt"
+
+        // Guardar el token en el localStorage
+        if (token) {
+            localStorage.setItem('token', token);
+
+            // Aquí podrías redirigir a una página de perfil o dashboard si quieres
+            window.location.href = './views/perfil.html'; // Cambia a la página que desees
+        } else {
+            throw new Error('No se recibió el token de autenticación.');
+        }
+    })
+    .catch(error => {
+        const errorMessage = document.getElementById('errorMessage');
+        errorMessage.style.display = 'block';
+        errorMessage.textContent = error.message;
+    });
+});
     </script>
 </body>
 </html>

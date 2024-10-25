@@ -3,7 +3,7 @@ body {
     font-family: 'Arial', sans-serif;
     display: flex;
     height: 100vh;
-    background-image: url("PREST.png");
+    background-image: url("../img/PREST.png");
 }
 
 div{
@@ -16,7 +16,6 @@ div{
     color: white;
     padding: 20px;
 }
-
 h1 {
     font-size: 6em;
     text-align: center;

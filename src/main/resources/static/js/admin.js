@@ -802,7 +802,7 @@ class OrdenTrabajoForm extends HTMLElement {
         await this.loadOrdenesTrabajo(); // Recargar la lista después de eliminar
     }
 }
-class PersonaForm extends HTMLElement {
+class PersonaForm extends HTMLElement { 
     connectedCallback() {
         this.innerHTML = `
         <div class="form">

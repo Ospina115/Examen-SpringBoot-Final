@@ -35,7 +35,6 @@ header {
 }
 .right{
     background-image: url(../img/fondo.png);
-    background-color: aliceblue;
     width: 80%;
     display: flex;
     justify-content: space-around;
@@ -97,7 +96,7 @@ form{
 }
 form input{
     font-size: 200%;
-    padding: 2%;
+    padding: 1%;
     margin: 2%;
     border-radius: 30px;
 }
