@@ -233,6 +233,4 @@ INSERT INTO granted_permission (role_id, operation_id) VALUES (2, 14);
 -- CREACIÓN DE USUARIOS
 
 
-INSERT INTO "user" (username, name, password, role_id) VALUES ('keniayh', 'Kenia Hernandez', '$2a$10$ywh1O2EwghHmFIMGeHgsx.9lMw5IXpg4jafeFS.Oi6nFv0181gHli', 1);
-INSERT INTO "user" (username, name, password, role_id) VALUES ('jmpardo', 'Jose Manuel', '$2a$10$V29z7/qC9wpHfzRMxGOHye5RMAxCid2/MzJalk0dsiA3zZ9CJfub.', 2);
-INSERT INTO "user" (username, name, password, role_id) VALUES ('jjplata', 'Juan Jose', '$2a$10$ecBf3t7Vk9QEsA2wMmvDR.Pp.22p.3EwuNLnSX8OBcoo1bHxWhEia', 3);
+INSERT INTO PrestService1.`user` (name, password, username, role_id) VALUES('marco', '$2a$10$GiN/Ggyix7JPEQS1VNH6BesX.CnX0RN8CZPGezoiDVRcdbDnSX0Va', 'sistemas', 7);
