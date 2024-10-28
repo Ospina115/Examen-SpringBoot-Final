@@ -13,8 +13,10 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.proyect.demo.application.services.auth.AuthenticationService;
 import com.example.proyect.demo.domain.dto.auth.AuthenticationRequest;
 import com.example.proyect.demo.domain.dto.auth.AuthenticationResponse;
+import com.example.proyect.demo.domain.dto.auth.LogoutResponse;
 import com.example.proyect.demo.domain.entities.security.User;
 
+import jakarta.servlet.http.HttpServletRequest;
 import jakarta.validation.Valid;
 
 @CrossOrigin(origins = "http://127.0.0.1:5500")
@@ -38,6 +40,12 @@ public class AuthenticationController {
         AuthenticationResponse rsp = authenticationService.login(authenticationRequest);
         return ResponseEntity.ok(rsp);
 
+    }
+
+    @PostMapping("/logout")
+    public ResponseEntity<LogoutResponse> logout(HttpServletRequest request){
+        authenticationService.logout(request);
+        return ResponseEntity.ok(new LogoutResponse("La sesión se cerro exitosamente"));
     }
     
     @GetMapping("/profile")

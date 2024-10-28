@@ -2,8 +2,6 @@ package com.example.proyect.demo.domain.dto;
 
 import java.io.Serializable;
 
-import com.example.proyect.demo.domain.entities.Persona;
-
 import jakarta.validation.constraints.Size;
 
 public class UserDto implements Serializable {
