@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interfaz de Registro</title>
+    <link rel="stylesheet" href="../../static/css/jefesistemas.css">
+    <script src="../../static/js/jefesistemas.js" defer></script>
+</head>
+<body>
+    <header>
+        <img src="../../static/img/logo.png" alt="logo" height="70px">
+        <h1>MENU JEFE DE SISTEMAS</h1>
+        <div style="position: relative;">
+            <img src="../../static/img/icon.png" alt="user-icon" height="50px" id="user-icon" style="cursor: pointer;">
+            <div class="dropdown" id="dropdown-menu">
+                <button id="logout-button">Cerrar sesión</button>
+            </div>
+        </div>
+    </header>
+    <div class="container">
+        <div class="left">
+            <button>
+                <span class="transition"></span>
+                <span class="gradient"></span>
+                <span class="label">Ciudades</span>
+            </button>
+            <button>
+                <span class="transition"></span>
+                <span class="gradient"></span>
+                <span class="label">Paises</span>
+            </button>
+            <button>
+                <span class="transition"></span>
+                <span class="gradient"></span>
+                <span class="label">Regiones</span>
+            </button>
+            <button>
+                <span class="transition"></span>
+                <span class="gradient"></span>
+                <span class="label">Direcciones</span>
+            </button>
+            <button>
+                <span class="transition"></span>
+                <span class="gradient"></span>
+                <span class="label">Emails</span>
+            </button>
+            <button>
+                <span class="transition"></span>
+                <span class="gradient"></span>
+                <span class="label">Empresas</span>
+            </button>
+            <button>
+                <span class="transition"></span>
+                <span class="gradient"></span>
+                <span class="label">Estados de Aprobación</span>
+            </button>
+            <button>
+                <span class="transition"></span>
+                <span class="gradient"></span>
+                <span class="label">Estados de Orden</span>
+            </button>
+            <button>
+                <span class="transition"></span>
+                <span class="gradient"></span>
+                <span class="label">Insumos</span>
+            </button>
+            <button>
+                <span class="transition"></span>
+                <span class="gradient"></span>
+                <span class="label">Órdenes de Servicio</span>
+            </button>
+            <button>
+                <span class="transition"></span>
+                <span class="gradient"></span>
+                <span class="label">Órdenes de Trabajo</span>
+            </button>
+            <button>
+                <span class="transition"></span>
+                <span class="gradient"></span>
+                <span class="label">Personas</span>
+            </button>
+            <button>
+                <span class="transition"></span>
+                <span class="gradient"></span>
+                <span class="label">Sucursales</span>
+            </button>
+            <button>
+                <span class="transition"></span>
+                <span class="gradient"></span>
+                <span class="label">Tipo Email</span>
+            </button>
+            <button>
+                <span class="transition"></span>
+                <span class="gradient"></span>
+                <span class="label">Tipo Empresa</span>
+            </button>
+            <button>
+                <span class="transition"></span>
+                <span class="gradient"></span>
+                <span class="label">Persona Insumo</span>
+            </button>
+            <button>
+                <span class="transition"></span>
+                <span class="gradient"></span>
+                <span class="label">Servicio</span>
+            </button>
+        </div>
+        <div class="right">
+            <h2>Por favor <br>Selecciona una opcion</h2>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('user-icon').addEventListener('click', function() {
+            const dropdown = document.getElementById('dropdown-menu');
+            dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+        });
+
+        document.getElementById('logout-button').addEventListener('click', function() {
+            window.location.href = '../index.html';
+        });
+
+        window.onclick = function(event) {
+            if (!event.target.matches('#user-icon')) {
+                const dropdown = document.getElementById('dropdown-menu');
+                if (dropdown.style.display === 'block') {
+                    dropdown.style.display = 'none';
+                }
+            }
+        }
+    </script>
+</body>
+</html>

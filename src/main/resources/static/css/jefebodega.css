@@ -20,6 +20,27 @@ header {
     width: 100%;
     z-index: 100;
 }
+
+.dropdown {
+    display: none;
+    position: absolute;
+    right: 1px;
+    background-color: white;
+    border: 1px solid #ccc;
+    z-index: 1;
+}
+.dropdown button {
+    display: block;
+    width: 100%;
+    border: none;
+    background: none;
+    text-align: center;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+.dropdown button:hover {
+    background-color: #8b61c2;
+}
 .container {
     display: flex;
     width: 100%;
