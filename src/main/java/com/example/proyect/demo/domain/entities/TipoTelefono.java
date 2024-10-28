@@ -22,8 +22,8 @@ public class TipoTelefono {
     @Column(name = "id")
     private int id;
 
-    @Column(name = "num")
-    private String numero;
+    @Column(name = "descripcion")
+    private String descripcion;
 
     @OneToMany(mappedBy = "tipoTelefonos")
     @JsonIgnore
