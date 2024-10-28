@@ -1,5 +1,3 @@
-
-
 -- CREACIÓN DE MODULOS
 
 
@@ -26,16 +24,20 @@ INSERT INTO module (name, base_path) VALUES ('TIPOEMAIL', '/tpemail');
 INSERT INTO module (name, base_path) VALUES ('TIPOEMPRESA', '/tpempresas');
 INSERT INTO module (name, base_path) VALUES ('TIPOPERSONA', '/tipopersona');
 
+INSERT INTO module (name, base_path) VALUES ('ESTADOORDEN', '/estordenes');
+INSERT INTO module (name, base_path) VALUES ('TELPERSONA', '/telpersonas');
+INSERT INTO module (name, base_path) VALUES ('TIPOTELEFONO', '/tptelefonos');
+
 
 -- CREACIÓN DE OPERACIONES
 
 
-INSERT INTO operation (name, path, http_method, permit_all, module_id) VALUES ('READ_ALL_CLIENTES','', 'GET', true, 1);
+INSERT INTO operation (name, path, http_method, permit_all, module_id) VALUES ('READ_ALL_CLIENTES','', 'GET', false, 1);
 INSERT INTO operation (name, path, http_method, permit_all, module_id) VALUES ('REGISTER_ONE','', 'POST', true, 1);
 
 INSERT INTO operation (name, path, http_method, permit_all, module_id) VALUES ('AUTHENTICATE','/authenticate', 'POST', true, 2);
 INSERT INTO operation (name, path, http_method, permit_all, module_id) VALUES ('VALIDATE-TOKEN','/validate-token', 'GET', true, 2);
-INSERT INTO operation (name, path, http_method, permit_all, module_id) VALUES ('READ_MY_PROFILE','/profile','GET', true, 2);
+INSERT INTO operation (name, path, http_method, permit_all, module_id) VALUES ('READ_MY_PROFILE','/profile','GET', false, 2);
 
 INSERT INTO operation (name, path, http_method, permit_all, module_id) VALUES ('READ_ALL_PAISES','', 'GET', false, 3);
 INSERT INTO operation (name, path, http_method, permit_all, module_id) VALUES ('READ_ONE_PAIS','/[0-9]*', 'GET', false, 3);
@@ -175,7 +177,26 @@ INSERT INTO operation (name, path, http_method, permit_all, module_id) VALUES ('
 INSERT INTO operation (name, path, http_method, permit_all, module_id) VALUES ('UPDATE_ONE_TIPOPERSONA','/[0-9]*', 'PUT', false, 22);
 INSERT INTO operation (name, path, http_method, permit_all, module_id) VALUES ('DISABLE_ONE_TIPOPERSONA','/[0-9]*/disabled', 'PUT', false, 22);
 
+-- TIPOPERSONA MODULE OPERATIONS
+INSERT INTO operation (name, path, http_method, permit_all, module_id) VALUES ('READ_ALL_ESTADOORDENES','', 'GET', false, 23);
+INSERT INTO operation (name, path, http_method, permit_all, module_id) VALUES ('READ_ONE_ESTADOORDEN','/[0-9]*', 'GET', false, 23);
+INSERT INTO operation (name, path, http_method, permit_all, module_id) VALUES ('CREATE_ONE_ESTADOORDEN','', 'POST', false, 23);
+INSERT INTO operation (name, path, http_method, permit_all, module_id) VALUES ('UPDATE_ONE_ESTADOORDEN','/[0-9]*', 'PUT', false, 23);
+INSERT INTO operation (name, path, http_method, permit_all, module_id) VALUES ('DISABLE_ONE_ESTADOORDEN','/[0-9]*/disabled', 'PUT', false, 23);
 
+-- TIPOPERSONA MODULE OPERATIONS
+INSERT INTO operation (name, path, http_method, permit_all, module_id) VALUES ('READ_ALL_TELPERSONAS','', 'GET', false, 24);
+INSERT INTO operation (name, path, http_method, permit_all, module_id) VALUES ('READ_ONE_TELPERSONA','/[0-9]*', 'GET', false, 24);
+INSERT INTO operation (name, path, http_method, permit_all, module_id) VALUES ('CREATE_ONE_TELPERSONA','', 'POST', false, 24);
+INSERT INTO operation (name, path, http_method, permit_all, module_id) VALUES ('UPDATE_ONE_TELPERSONA','/[0-9]*', 'PUT', false, 24);
+INSERT INTO operation (name, path, http_method, permit_all, module_id) VALUES ('DISABLE_ONE_TELPERSONA','/[0-9]*/disabled', 'PUT', false, 24);
+
+-- TIPOPERSONA MODULE OPERATIONS
+INSERT INTO operation (name, path, http_method, permit_all, module_id) VALUES ('READ_ALL_TIPOTELEFONOS','', 'GET', false, 24);
+INSERT INTO operation (name, path, http_method, permit_all, module_id) VALUES ('READ_ONE_TIPOTELEFONO','/[0-9]*', 'GET', false, 24);
+INSERT INTO operation (name, path, http_method, permit_all, module_id) VALUES ('CREATE_ONE_TIPOTELEFONO','', 'POST', false, 24);
+INSERT INTO operation (name, path, http_method, permit_all, module_id) VALUES ('UPDATE_ONE_TIPOTELEFONO','/[0-9]*', 'PUT', false, 24);
+INSERT INTO operation (name, path, http_method, permit_all, module_id) VALUES ('DISABLE_ONE_TIPOTELEFONO','/[0-9]*/disabled', 'PUT', false, 24);
 -- CREACIÓN DE ROLES
 
 
