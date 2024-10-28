@@ -47,6 +47,7 @@ public class PersonaImpl implements IPersonaService{
             personaDb.setSucursal(persona.getSucursal());
             personaDb.setDireccion(persona.getDireccion());
             personaDb.setTipoPersonas(persona.getTipoPersonas());
+            personaDb.setUser(persona.getUser());
             return Optional.of(personaRepository.save(personaDb));
         }
         return perOptional;

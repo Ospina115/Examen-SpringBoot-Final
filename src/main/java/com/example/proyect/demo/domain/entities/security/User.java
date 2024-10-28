@@ -8,6 +8,8 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
+import com.example.proyect.demo.domain.entities.Persona;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -34,7 +36,16 @@ public class User implements UserDetails {
     @JoinColumn(name = "role_id")
     private Role role;
 
+    @ManyToOne
+    @JoinColumn(name = "num_doc", unique = true)
+    private Persona persona;
 
+    public Persona getPersona() {
+        return persona;
+    }
+    public void setPersona(Persona persona) {
+        this.persona = persona;
+    }
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         if(role == null) return null;

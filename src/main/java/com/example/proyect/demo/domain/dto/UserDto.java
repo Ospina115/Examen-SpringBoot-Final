@@ -1,6 +1,9 @@
 package com.example.proyect.demo.domain.dto;
 
 import java.io.Serializable;
+
+import com.example.proyect.demo.domain.entities.Persona;
+
 import jakarta.validation.constraints.Size;
 
 public class UserDto implements Serializable {
@@ -12,6 +15,15 @@ public class UserDto implements Serializable {
     private String password;
     @Size(min = 8)
     private String repeatedPassword;
+
+    private int personaNumDoc;
+    
+    public int getPersonaNumDoc() {
+        return personaNumDoc;
+    }
+    public void setPersonaNumDoc(int personaNumDoc) {
+        this.personaNumDoc = personaNumDoc;
+    }
     public String getName() {
         return name;
     }

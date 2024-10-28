@@ -7,5 +7,5 @@ import com.example.proyect.demo.domain.entities.Persona;
 
 @Repository
 public interface PersonaRepository extends CrudRepository<Persona, Integer>{
-
+    
 }

@@ -3,6 +3,7 @@ package com.example.proyect.demo.domain.entities;
 import java.sql.Date;
 import java.util.List;
 
+import com.example.proyect.demo.domain.entities.security.User;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import jakarta.persistence.Id;
@@ -59,7 +60,7 @@ public class Persona {
     @JsonIgnore
     private List<PersonaInsumo> PersonaInsumos;
 
-    @OneToMany(mappedBy = "personas")
+    @OneToMany(mappedBy = "persona")
     @JsonIgnore
     private List<OrdenServicio> ordenServicios;
 
@@ -70,4 +71,8 @@ public class Persona {
     @OneToMany(mappedBy = "persona")
     @JsonIgnore
     private List<OrdenTrabajo> ordenTrabajos;
+
+    @OneToMany(mappedBy = "persona")
+    @JsonIgnore
+    private List<User> user;
 }
