@@ -67,8 +67,8 @@ document.getElementById('loginForm').addEventListener('submit', function(e) {
         if (token) {
             localStorage.setItem('token', token);
 
-            // Aquí podrías redirigir a una página de perfil o dashboard si quieres
-            window.location.href = './views/perfil.html'; // Cambia a la página que desees
+            // CAMBIAR
+            window.location.href = './views/jefesistemas.html'; // Cambia a la página que desees
         } else {
             throw new Error('No se recibió el token de autenticación.');
         }
