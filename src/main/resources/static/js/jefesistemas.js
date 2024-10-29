@@ -1318,7 +1318,6 @@ customElements.define('sucursal-form', SucursalForm);
 customElements.define('tipo-email-form', TipoEmailForm);
 customElements.define('tipo-empresa-form', TipoEmpresaForm);
 customElements.define('tipo-persona-form', TipoPersonaForm);
-
 customElements.define('persona-insumo-form', PersonaInsumoForm);
 customElements.define('servicio-form',  ServicioForm);
 
