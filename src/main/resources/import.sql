@@ -228,7 +228,7 @@ INSERT INTO operation (name, path, http_method, permit_all, module_id) VALUES ('
 -- CREACIÓN DE ROLES
 
 
-INSERT INTO role (name) VALUES ('CLEINTE');
+INSERT INTO role (name) VALUES ('CLIENTE');
 INSERT INTO role (name) VALUES ('ADMINISTRADOR');
 INSERT INTO role (name) VALUES ('JEFE_RECURSOS_HUMANOS');
 INSERT INTO role (name) VALUES ('JEFE_BODEGA');
@@ -604,7 +604,52 @@ INSERT INTO granted_permission (role_id, operation_id) VALUES (12, 77);
 INSERT INTO granted_permission (role_id, operation_id) VALUES (12, 56);
 INSERT INTO granted_permission (role_id, operation_id) VALUES (12, 57);
 INSERT INTO granted_permission (role_id, operation_id) VALUES (12, 121);
+
+-- -----------------------------------------
+
+-- Tabla Personas
+
+INSERT INTO persona (num_doc, apellido, fecha_registro, nombre, id_direccion, id_sucursal, id_tipo_persona)
+VALUES (12345678, 'Gonzalez', '2023-01-15', 'Juan', null, null, null);
+INSERT INTO persona (num_doc, apellido, fecha_registro, nombre, id_direccion, id_sucursal, id_tipo_persona)
+VALUES (1234567, 'Perez', '2023-02-10', 'Ana', null, null, null);
+INSERT INTO persona (num_doc, apellido, fecha_registro, nombre, id_direccion, id_sucursal, id_tipo_persona)
+VALUES (123456, 'Rodriguez', '2023-03-05', 'Carlos', null, null, null);
+INSERT INTO persona (num_doc, apellido, fecha_registro, nombre, id_direccion, id_sucursal, id_tipo_persona)
+VALUES (12345, 'Lopez', '2023-04-20', 'María', null, null, null);
+INSERT INTO persona (num_doc, apellido, fecha_registro, nombre, id_direccion, id_sucursal, id_tipo_persona)
+VALUES (1234, 'Martinez', '2023-05-17', 'Luis', null, null, null);
+INSERT INTO persona (num_doc, apellido, fecha_registro, nombre, id_direccion, id_sucursal, id_tipo_persona)
+VALUES (123, 'Garcia', '2023-06-11', 'Laura', null, null, null);
+INSERT INTO persona (num_doc, apellido, fecha_registro, nombre, id_direccion, id_sucursal, id_tipo_persona)
+VALUES (12, 'Sanchez', '2023-07-08', 'Jorge', null, null, null);
+INSERT INTO persona (num_doc, apellido, fecha_registro, nombre, id_direccion, id_sucursal, id_tipo_persona)
+VALUES (123456789, 'Sanchez', '2023-07-08', 'Sebastian', null, null, null);
+INSERT INTO persona (num_doc, apellido, fecha_registro, nombre, id_direccion, id_sucursal, id_tipo_persona)
+VALUES (1234567899, 'Sanchez', '2023-07-08', 'Marco', null, null, null);
+INSERT INTO persona (num_doc, apellido, fecha_registro, nombre, id_direccion, id_sucursal, id_tipo_persona)
+VALUES (12345677, 'Sanchez', '2023-07-08', 'Maria', null, null, null);
+INSERT INTO persona (num_doc, apellido, fecha_registro, nombre, id_direccion, id_sucursal, id_tipo_persona)
+VALUES (1234566, 'Sanchez', '2023-07-08', 'Mariangel', null, null, null);
+INSERT INTO persona (num_doc, apellido, fecha_registro, nombre, id_direccion, id_sucursal, id_tipo_persona)
+VALUES (123455, 'Sanchez', '2023-07-08', 'Sofia', null, null, null);
+INSERT INTO persona (num_doc, apellido, fecha_registro, nombre, id_direccion, id_sucursal, id_tipo_persona)
+VALUES (12344, 'Sanchez', '2023-07-08', 'Sofia', null, null, null);
+
+
+
 -- CREACIÓN DE USUARIOS
+INSERT INTO PrestService1.`user` (name, password, username, num_doc, role_id) VALUES('cliente', '$2a$10$2s4sklEdSJtHsxnDtdP3JeqXU8VgujgjHV0nbBTNtqXvG5S6Ey8i2', 'cliente', 12345678, 1);
+INSERT INTO PrestService1.`user` (name, password, username, num_doc, role_id) VALUES('admin', '$2a$10$2s4sklEdSJtHsxnDtdP3JeqXU8VgujgjHV0nbBTNtqXvG5S6Ey8i2', 'admin', 123456, 2);
+INSERT INTO PrestService1.`user` (name, password, username, num_doc, role_id) VALUES('jefeRH', '$2a$10$2s4sklEdSJtHsxnDtdP3JeqXU8VgujgjHV0nbBTNtqXvG5S6Ey8i2', 'jefeRH',  12345, 3);
+INSERT INTO PrestService1.`user` (name, password, username, num_doc, role_id) VALUES('jefeB', '$2a$10$2s4sklEdSJtHsxnDtdP3JeqXU8VgujgjHV0nbBTNtqXvG5S6Ey8i2', 'jefeB', 1234, 4);
+INSERT INTO PrestService1.`user` (name, password, username, num_doc, role_id) VALUES('jefeI', '$2a$10$2s4sklEdSJtHsxnDtdP3JeqXU8VgujgjHV0nbBTNtqXvG5S6Ey8i2', 'jefeI', 123, 5);
+INSERT INTO PrestService1.`user` (name, password, username, num_doc, role_id) VALUES('jefeM', '$2a$10$2s4sklEdSJtHsxnDtdP3JeqXU8VgujgjHV0nbBTNtqXvG5S6Ey8i2', 'jefeM', 12, 6);
+INSERT INTO PrestService1.`user` (name, password, username, num_doc, role_id) VALUES('jefeS', '$2a$10$2s4sklEdSJtHsxnDtdP3JeqXU8VgujgjHV0nbBTNtqXvG5S6Ey8i2', 'jefeS', 123456789, 7);
+INSERT INTO PrestService1.`user` (name, password, username, num_doc, role_id) VALUES('gerente', '$2a$10$2s4sklEdSJtHsxnDtdP3JeqXU8VgujgjHV0nbBTNtqXvG5S6Ey8i2', 'gerente', 1234567899, 8);
+INSERT INTO PrestService1.`user` (name, password, username, num_doc, role_id) VALUES('profesional', '$2a$10$2s4sklEdSJtHsxnDtdP3JeqXU8VgujgjHV0nbBTNtqXvG5S6Ey8i2', 'profesional', 12345677, 9);
+INSERT INTO PrestService1.`user` (name, password, username, num_doc, role_id) VALUES('auxB', '$2a$10$2s4sklEdSJtHsxnDtdP3JeqXU8VgujgjHV0nbBTNtqXvG5S6Ey8i2', 'auxB', 1234566, 10);
+INSERT INTO PrestService1.`user` (name, password, username, num_doc, role_id) VALUES('proveedor', '$2a$10$2s4sklEdSJtHsxnDtdP3JeqXU8VgujgjHV0nbBTNtqXvG5S6Ey8i2', 'proveedor', 123455, 11);
+INSERT INTO PrestService1.`user` (name, password, username, num_doc, role_id) VALUES('jefeC', '$2a$10$2s4sklEdSJtHsxnDtdP3JeqXU8VgujgjHV0nbBTNtqXvG5S6Ey8i2', 'jefeC', 12344, 12);
 
-
-INSERT INTO PrestService1.`user` (name, password, username, role_id) VALUES('marco', '$2a$10$GiN/Ggyix7JPEQS1VNH6BesX.CnX0RN8CZPGezoiDVRcdbDnSX0Va', 'sistemas', 7);
+-- contraseña: defaultPassword
