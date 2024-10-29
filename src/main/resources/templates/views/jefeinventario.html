@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jefe de Inventario</title>
+    <link rel="stylesheet" href="../../static/css/jefeinventario.css">
+    <script src="../../static/js/jefeinventario.js" defer></script>
+</head>
+<body>
+    <header>
+        <img src="../../static/img/logo.png" alt="logo" height="70px">
+        <h1>MENU JEFE DE INVENTARIO</h1>
+        <div style="position: relative;">
+            <img src="../../static/img/icon.png" alt="user-icon" height="50px" id="user-icon" style="cursor: pointer;">
+            <div class="dropdown" id="dropdown-menu">
+                <button id="logout-button">Cerrar sesión</button>
+            </div>
+        </div>
+    </header>
+    <div class="container">
+        <div class="left">
+            <button>
+                <span class="transition"></span>
+                <span class="gradient"></span>
+                <span class="label">Lista de Pedidos</span>
+            </button>
+            <button>
+                <span class="transition"></span>
+                <span class="gradient"></span>
+                <span class="label">Eliminar Pedido</span>
+            </button>
+            <button>
+                <span class="transition"></span>
+                <span class="gradient"></span>
+                <span class="label">Lista de Compras de Insumos</span>
+            </button>
+            <button>
+                <span class="transition"></span>
+                <span class="gradient"></span>
+                <span class="label">Eliminar Compras de Insumos</span>
+            </button>
+        </div>
+        <div class="right">
+            <h2>Por favor <br>Selecciona una opcion</h2>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('user-icon').addEventListener('click', function() {
+            const dropdown = document.getElementById('dropdown-menu');
+            dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+        });
+
+        document.getElementById('logout-button').addEventListener('click', function() {
+            window.location.href = '../index.html';
+        });
+
+        window.onclick = function(event) {
+            if (!event.target.matches('#user-icon')) {
+                const dropdown = document.getElementById('dropdown-menu');
+                if (dropdown.style.display === 'block') {
+                    dropdown.style.display = 'none';
+                }
+            }
+        }
+    </script>
+</body>
+</html>

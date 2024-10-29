@@ -122,11 +122,14 @@ transform: scale(0.97);
     display: flex;
     flex-direction: row;
     align-items: flex-start;
-    width: 90%;
-    height: 80%;
+    width: 100%;
+    height: 100%;
+}
+.insumo-form{
+    color: aqua;
 }
 .form div{
-    height: 40vh;
+    height: 50vh;
     width: 50vh;
     background-color: white;
     padding: 10%;
