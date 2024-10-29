@@ -4,24 +4,24 @@ connectedCallback() {
     this.innerHTML = `
     <div class="form">
         <div>
-        <h2>Lista de Ciudades</h2>
-        <ul id="ciudades-list"></ul>
+            <h2>Lista de Ciudades</h2>
+            <ul id="ciudades-list"></ul>
         </div>
         <div>
-        <h2>Agregar Ciudad</h2>
-        <input type="text" id="nombre-ciudad" placeholder="Nombre de la ciudad" />
-        <button onclick="createCiudad()">Agregar</button>
+            <h2>Agregar Ciudad</h2>
+            <input type="text" id="nombre-ciudad" placeholder="Nombre de la ciudad" />
+            <button onclick="createCiudad()">Agregar</button>
         </div>
         <div>
-        <h2>Actualizar Ciudad</h2>
-        <input type="number" id="id-ciudad" placeholder="ID de la ciudad" />
-        <input type="text" id="nuevo-nombre-ciudad" placeholder="Nuevo nombre de la ciudad" />
-        <button onclick="updateCiudad()">Actualizar</button>
+            <h2>Actualizar Ciudad</h2>
+            <input type="number" id="id-ciudad" placeholder="ID de la ciudad" />
+            <input type="text" id="nuevo-nombre-ciudad" placeholder="Nuevo nombre de la ciudad" />
+            <button onclick="updateCiudad()">Actualizar</button>
         </div>
         <div>
-        <h2>Eliminar Ciudad</h2>
-        <input type="number" id="eliminar-id-ciudad" placeholder="ID de la ciudad" />
-        <button onclick="deleteCiudad()">Eliminar</button>
+            <h2>Eliminar Ciudad</h2>
+            <input type="number" id="eliminar-id-ciudad" placeholder="ID de la ciudad" />
+            <button onclick="deleteCiudad()">Eliminar</button>
         </div>
     </div>
     `;
